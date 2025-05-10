@@ -20,7 +20,8 @@ An e-commerce web application designed to provide tennis players with a seamless
 
 **Winner Tennis Sportswear** is a full-stack web application developed as part of a course project at Yoobee College, Auckland. It aims to address the lack of dedicated online stores for tennis sportswear by offering an intuitive, responsive, and secure platform for purchasing tennis gear.
 
-This is the project presentation file: 
+[View Project Report (PDF)](./Winner_Tennis_Sportswear_Project_Report.pdf)
+[View Project Presentation File (PDF)](./Winner_Tennis_Sportswear_Project_Presentation.pdf)
 
 ---
 
