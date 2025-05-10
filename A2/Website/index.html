@@ -1,0 +1,280 @@
+<!-- 1. Upload image
+
+Non-requirement: Only the customer can leave the product review and apply for the refund
+Refund if the order id and customer id does not match, "You do not have related order" will be shown, and the order with the delivery method pending status will show "not identified"
+5. When the refund request is added, the added needs to be loaded to show (the same problem with all displaying function)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>Winner</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="logo">
+        <h1 id="home" onclick="showHome()">Winner</h1>
+        <div>
+            <h2 id="AV" style="float:right; display:none">Admin Version</h2>
+        </div>
+    </div>
+    <div class="nav">
+        <a onclick="showHome()">Shop</a>
+        <a onclick="showDeliveryMethod()">Delivery Method</a>
+        <a onclick="showrefund()">Refund</a>
+
+
+        <div class="drop">
+            <button class="dm-button">Product Category</button>
+            <div class="Content">
+                <a id="AllProduct" onclick="CategoryFilter('All Products')">All Products</a>
+                <a id="MenClothes" onclick="CategoryFilter('Men Clothes')">Men Clothes</a>
+                <a id="MenShoes" onclick="CategoryFilter('Men Shoes')">Men Shoes</a>
+                <a id="WomenClothes" onclick="CategoryFilter('Women Clothes')">Women Clothes</a>
+                <a id="WomenShoes" onclick="CategoryFilter('Women Shoes')">Women Shoes</a>
+            </div>
+        </div>
+        <div class="search" style="float:left">
+            <input id="Search" type="text" onkeyup="search()" placeholder="What do you want?">
+            <button type="submit" onclick="search()">Search</button>
+        </div>
+        <div class="drop" id="EP" style="display:none">
+            <button class="dm-button">Edit Product</button>
+            <div class="Content">
+                <a id="AddProduct" onclick="showAddProduct()">Add Product</a>
+                <a id="EditProduct" onclick="showUpdateProduct()">Update Product</a>
+                <a id="DeleteProduct" onclick="showDeleteProduct()">Delete Product</a>
+            </div>
+        </div>
+        <a id="ProcessRefund" style="display:none" onclick="showRefundProcess()">Process Refund</a>
+        <div id="Loginstatus">
+            <a style="float:right" id="Login" onclick="showLogin()">Login</a>
+        </div>
+        <a style="float:right" id="Cart" onclick="showPastorder()">Orders</a>
+        <a style="float:right" id="Cart" onclick="showCart()">Shopping Cart</a>
+    </div>
+
+    <div id="products">
+        <h1 style="text-align: center;">Products</h1>
+        <div id="product"></div>
+
+    </div>
+
+    <div id="productDetail">
+    </div>
+    <div id="reviews">
+    </div>
+
+    <div id="addproject" style="display:none">
+        <div class="Form">
+            <h1 style="text-align: center;">Add Product</h1>
+
+            <label for="ProductName">Product Name</label>
+            <input placeholder="Please Enter Product Name" id="ProductName" name="ProjectName" type="text" required>
+
+            <label for="Description">Description</label>
+            <input placeholder="Please Enter Description" id="Description" name="Description" type="text" required>
+
+            <label for="Category">Category</label>
+            <input placeholder="Please Enter Category" id="Category" name="Category" type="text" required>
+
+            <label for="Price">Price</label>
+            <input placeholder="Please Enter Price" id="Price" name="Price" type="number" required>
+
+            <label for="Quantity">Quantity</label>
+            <input placeholder="Please Enter Quantity" id="Quantity" name="Quantity" type="number" required>
+
+            <label for="Color">Color</label>
+            <input placeholder="Please Enter Color" id="Color" name="Color" type="text" required>
+
+            <label for="Size">Size</label>
+            <input placeholder="Please Enter Size" id="Size" name="Size" type="text" required>
+
+            <label for="Discount">Discount</label>
+            <input placeholder="Please Enter Discount" id="Discount" name="Discount" type="number" required>
+
+            <label for="image">Photo</label>
+            <input id="image" name="image" type="file" required accept=".png, .jpg, .jpeg, .pdf">
+
+            <button type="submit" onclick="AddProduct()">Add Product</button>
+        </div>
+
+    </div>
+
+    <div id="updateProduct" style="display:none">
+        <div class="Form">
+            <h1 style="text-align: center;">Update Product</h1>
+
+            <label for="uProductID">Product ID</label>
+            <input placeholder="Please Enter Product ID" id="uProductID" name="uProjectID" type="number" required>
+
+
+            <label for="uProductName">Product Name</label>
+            <input placeholder="Please Enter Product Name" id="uProductName" name="uProjectName" type="text" required>
+
+            <label for="uDescription">Description</label>
+            <input placeholder="Please Enter Description" id="uDescription" name="uDescription" type="text" required>
+
+            <label for="uCategory">Category</label>
+            <input placeholder="Please Enter Category" id="uCategory" name="uCategory" type="text" required>
+
+            <label for="uPrice">Price</label>
+            <input placeholder="Please Enter Price" id="uPrice" name="uPrice" type="number" required>
+
+            <label for="uQuantity">Quantity</label>
+            <input placeholder="Please Enter Quantity" id="uQuantity" name="uQuantity" type="number" required>
+
+            <label for="uColor">Color</label>
+            <input placeholder="Please Enter Color" id="uColor" name="uColor" type="text" required>
+
+            <label for="uSize">Size</label>
+            <input placeholder="Please Enter Size" id="uSize" name="uSize" type="text" required>
+
+            <label for="uDiscount">Discount</label>
+            <input placeholder="Please Enter Discount" id="uDiscount" name="uDiscount" type="number" required>
+
+            <label for="uimage">Photo</label>
+            <input id="uimage" name="uimage" type="file" required accept=".png, .jpg, .jpeg, .pdf">
+
+            <button type="submit" onclick="UpdateProduct()">Update Product</button>
+        </div>
+
+    </div>
+
+    <div id="deleteProduct" style="display:none">
+        <div class="Form">
+            <h1 style="text-align: center;">Delete Product</h1>
+
+            <label for="dProductID">Product ID</label>
+            <input placeholder="Please Enter Product ID" id="dProductID" name="dProjectID" type="number" required>
+
+            <button type="submit" onclick="DeleteProduct()">Delete Product</button>
+        </div>
+    </div>
+
+    <div id="login" style="display:none">
+        <div class="Form">
+            <h1 style="text-align: center;">Login</h1>
+            <label for="email">Email</label>
+            <input placeholder="Please Enter Email" id="email" name="email" type="text" required>
+
+            <label for="password">Password</label>
+            <input placeholder="Please Enter Password" id="password" name="password" type="password" required>
+
+            <button type="submit" onclick="Login()">Login</button>
+
+            <div id="loginMessage"></div>
+
+            <p>If you do not have a account, please <a id="rtol" onclick="showRegister()">register</a></p>
+        </div>
+    </div>
+
+    <div id="register" style="display:none">
+        <div class="Form">
+            <h1 style="text-align: center;">Register</h1>
+            <label for="FirstName">First Name</label>
+            <input placeholder="Please Enter First Name" id="FirstName" name="FirstName" type="text" required>
+
+            <label for="LastName">Last Name</label>
+            <input placeholder="Please Enter Last Name" id="LastName" name="LastName" type="text" required>
+
+            <label for="Address">Address</label>
+            <input placeholder="Please Enter Address" id="Address" name="Address" type="text" required>
+
+            <label for="Phone">Phone Number</label>
+            <input placeholder="Please Enter Phone Number" id="Phone" name="Phone" type="text" required>
+
+            <label for="Email">Email</label>
+            <input placeholder="Please Enter Email" id="Email" name="Email" type="text" required>
+
+            <label for="Password">Password</label>
+            <input placeholder="Please Enter Password" id="Password" name="Password" type="password" required>
+
+            <button type="submit" onclick="Register()">Register</button>
+
+            <div id="registerMessage"></div>
+
+            <p>If you have a account, please <a id="rtol" onclick="showLogin()">login</a></p>
+        </div>
+    </div>
+
+    <div id="Refund" style="display:none">
+        <h1>Refund Policy</h1>
+        <div class="container">
+            <div class="text">
+                <p>The refund policy is when products are purchased within 14 days, the customer can apply for an online refund request by inputting the order ID, and the reason, and then the refund request will be processed by the administrator.</p>
+                <button onclick="showRefundForm()">APPLY FOR REFUND </button>
+            </div>
+            <div class="photo">
+                <img src="tennis2.jpeg" alt="tennis1">
+            </div>
+        </div>
+    </div>
+
+    <div id="DeliveryMethod" style="display:none">
+        <h1>Delivery Method</h1>
+        <div class="DM-container">
+            <div id="DM-container1">
+                <div class="Photo">
+                    <img src="tennis3.jpeg" alt="tennis2">
+                </div>
+                <div class="paragraph">
+                    <h2>Online Delivery</h2>
+                    <p>When the customer choose the online delivery, they will be charged for extra $5 NZ dollar.</p>
+                </div>
+            </div>
+            <div id="DM-container2">
+                <div class="Photo">
+                    <img src="tennis1.jpeg" alt="tennis1">
+                </div>
+                <div class="paragraph">
+                    <h2>Pick Up</h2>
+                    <p>When the customer choose the pick up, there will be no extra fees charged.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="RefundForm" style="display:none">
+        <div class="Form">
+            <h1 style="text-align: center;">Refund Form</h1>
+            <label for="OrderID">Order ID</label>
+            <input placeholder="Please Enter Order ID" id="orderid" name="orderid" type="number" required>
+
+            <label for="RefundReason">Refund Reason</label>
+            <textarea placeholder="Refund Reason" id="refundreason" name="refundreason" type="text" required rows="4" cols="50"></textarea>
+
+            <button type="submit" onclick="ApplyRefund()">Submit the refund form</button>
+        </div>
+    </div>
+
+    <div id="RefundRequest" style="display: none;">
+        <h1 id="RR">Refund Request</h1>
+        <div id="rr"></div>
+    </div>
+
+    <div id="ShoppingCart" style="display: none;">
+        <h1>Shopping Cart</h1>
+        <div id="shopingcart"></div>
+        <div class="delivery-method">
+            <label for="delivery">Select Delivery Method:</label>
+            <select id="delivery" name="delivery" onchange="showCart()">
+                <option value="standard">Pick Up</option>
+                <option value="express">Online Delivery</option>
+            </select>
+        </div>
+        <button class="checkout-btn" onclick="Checkout()">Checkout</button>
+    </div>
+
+    <div id="PastOrders" style="display: none;">
+        <h1>Past Orders</h1>
+        <div id="order-history" class="order-history-container"></div>
+    </div>
+
+</body>
+
+</html>
