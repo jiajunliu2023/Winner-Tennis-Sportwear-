@@ -11,7 +11,6 @@ An e-commerce web application designed to provide tennis players with a seamless
 - [Installation](#installation)
 - [Usage](#usage)
 - [Team](#team)
-- [License](#license)
 
 ---
 
@@ -88,3 +87,13 @@ An e-commerce web application designed to provide tennis players with a seamless
 3. Start browsing, filtering, and purchasing products
 
 4. Admins can access the admin panel for product and order management
+
+
+| Name            | Role                                |
+| --------------- | ----------------------------------- |
+| Jiajun Liu      | Project Lead / Full-Stack Developer |
+| Changsheng Tian | Full-Stack Developer                |
+| Anup Chapain    | Frontend Developer                  |
+| Pradeep Kandy   | Software Tester                     |
+| Supervisor      | Arun Kumar                          |
+
