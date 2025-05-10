@@ -20,6 +20,8 @@ An e-commerce web application designed to provide tennis players with a seamless
 
 **Winner Tennis Sportswear** is a full-stack web application developed as part of a course project at Yoobee College, Auckland. It aims to address the lack of dedicated online stores for tennis sportswear by offering an intuitive, responsive, and secure platform for purchasing tennis gear.
 
+This is the project presentation file: 
+
 ---
 
 ## ✅ Features
@@ -35,7 +37,6 @@ An e-commerce web application designed to provide tennis players with a seamless
 ### 🔧 Admin Features
 - Add, update, and delete products
 - Manage orders and refunds
-- Moderate product reviews
 
 ### 🛒 Core E-commerce Features
 - Product catalog with search and filtering
@@ -69,18 +70,13 @@ An e-commerce web application designed to provide tennis players with a seamless
    
     Ensure SQLite is configured and the schema matches the ERD.
 
-4.  Run the application
+4.  Run the server side
 
-    Press F5 in Visual Studio or run with dotnet run.Open in Visual Studio
-    Open the .sln file with Visual Studio 2022 or later.
+    Press F5 in Visual Studio or run the source code with dotnet run.
 
-6.  Set up the database
-   
-    Ensure SQLite is configured and the schema matches the ERD.
+5. Run the client side
 
-7.  Run the application
-
-    Press F5 in Visual Studio or run with dotnet run.
+   Open the "index.html" file to open the web page
 
 🧪 Usage
 1. Visit http://localhost:<port> in your browser
