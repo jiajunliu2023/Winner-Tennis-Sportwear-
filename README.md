@@ -23,7 +23,7 @@ An e-commerce web application designed to provide tennis players with a seamless
 [View Full Project Report (PDF)](./Winner%20Tennis%20Sportswear%20Project%20Report%20.pdf)
 
 
-[View Project Presentation File (PDF)](./Winner%20Tennis%20sportswears%20Project%20Presentation.pdf)
+[View Project Presentation File (PDF)](./Winner%20Tennis%20sportwears%20Project%20Presentation.pdf)
 
 ---
 
