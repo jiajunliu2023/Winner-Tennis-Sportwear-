@@ -5,12 +5,11 @@ An e-commerce web application designed to provide tennis players with a seamless
 ---
 
 ## 📌 Table of Contents
-- [Project Overview](#project-overview)
+- [Project Overview](##project-overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
 - [Team](#team)
 - [License](#license)
 
