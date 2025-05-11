@@ -23,6 +23,8 @@ An e-commerce web application designed to provide tennis players with a seamless
 
 [View Project Presentation File (PDF)](./Winner%20Tennis%20sportwears%20Project%20Presentation.pdf)
 
+[View Project Presentation Video](https://youtu.be/yIfdIAACtnI)
+
 ---
 
 ## ✅ Features
@@ -79,7 +81,7 @@ An e-commerce web application designed to provide tennis players with a seamless
 
    Open the "index.html" file to open the web page
 
-🧪 Usage
+## 🧪 Usage
 1. Visit http://localhost:<port> in your browser
 
 2. Register as a customer or use admin credentials
@@ -88,6 +90,7 @@ An e-commerce web application designed to provide tennis players with a seamless
 
 4. Admins can access the admin panel for product and order management
 
+## Team 
 
 | Name            | Role                                |
 | --------------- | ----------------------------------- |
