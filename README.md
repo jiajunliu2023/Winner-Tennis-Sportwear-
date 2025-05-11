@@ -11,6 +11,7 @@ An e-commerce web application designed to provide tennis players with a seamless
 - [Installation](#installation)
 - [Usage](#usage)
 - [Team](#team)
+- [License](#license)
 
 ---
 
@@ -99,4 +100,7 @@ An e-commerce web application designed to provide tennis players with a seamless
 | Anup Chapain    | Frontend Developer                  |
 | Pradeep Kandy   | Software Tester                     |
 | Supervisor      | Arun Kumar                          |
+
+## License
+This project is for academic purposes and currently not under a formal license. Contact the team for more information.
 
